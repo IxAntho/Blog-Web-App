@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<div class="form__container">
+  <form action="/submit">
+    <h2 class="form__title">New Post</h2>
+    <div class="input-field">
+      <input type="text" id="title" required />
+      <label class="form__label">Enter a title</label>
+    </div>
+    <div class="input-field">
+      <textarea id="thoughts" cols="30" rows="10" required></textarea>
+      <label class="form__label">Enter your thoughts</label>
+    </div>
+
+    <button type="submit">Post</button>
+  </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

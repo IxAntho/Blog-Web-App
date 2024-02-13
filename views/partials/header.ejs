@@ -11,11 +11,100 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../public/index.css" />
+    <style>
+      .form__container {
+        max-width: 700px;
+        width: 100%;
+        border-radius: 8px;
+        padding: 30px;
+        margin: 101px auto;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form__title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #000;
+      }
+
+      .input-field {
+        position: relative;
+        border-bottom: 2px solid #ccc;
+        margin: 15px 0;
+      }
+
+      .input-field label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: #000;
+        font-size: 16px;
+        pointer-events: none;
+        transition: 0.15s ease;
+      }
+
+      .input-field input {
+        width: 100%;
+        height: 40px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .input-field textarea {
+        width: 100%;
+        height: 300px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .input-field input:focus ~ label,
+      .input-field input:valid ~ label,
+      .input-field textarea:focus ~ label,
+      .input-field textarea:valid ~ label {
+        font-size: 0.8rem;
+        top: 10px;
+        transform: translateY(-120%);
+      }
+
+      button {
+        background: #000;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        padding: 12px 20px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 16px;
+        border: 2px solid transparent;
+        transition: 0.3s ease;
+      }
+
+      button:hover {
+        color: #fff;
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.15);
+      }
+    </style>
   </head>
-  <body>
+  <body class="page">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand header__brand" href="/" >InkSpire</a>
+      <div class="container" id="header__brand">
+        <a  class="navbar-brand" href="/" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 200; font-size: 25px;" >InkSpire</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -39,12 +128,3 @@
         </div>
       </div>
     </nav>
-    <header class="py-5 bg-light border-bottom mb-4">
-        <div class="container">
-            <div class="text-center my-5">
-                <h1 class="fw-bolder">Welcome to Blog Home!</h1>
-                <p class="lead mb-0">Explore Engaging Content and Insights in Our Blog Home</p>
-            </div>
-        </div>
-    </header>
-    <main class="main">

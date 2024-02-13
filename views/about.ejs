@@ -1,20 +1,76 @@
-<h1 class="about__heading">Welcome to InkSpire!</h1>
-<p class="about__text">
-  We celebrate the artistry and soulful expression of poetry in all its forms.
-  Whether you're a seasoned poet or just beginning to explore the depths of
-  verse, our platform is your canvas to unleash your creativity and share your
-  poetic journey with the world. Immerse yourself in a community of like-minded
-  individuals who appreciate the power of words to evoke emotion, provoke
-  thought, and inspire change. From sonnets to haikus, free verse to spoken
-  word, every poetic style finds a home here. Discover a sanctuary where you can
-  pen your thoughts, explore your passions, and weave intricate tapestries of
-  language. Whether you're drawn to the rhythm of rhymes or the raw honesty of
-  prose, our blog space is yours to shape and mold into a reflection of your
-  unique voice. Join us on this enchanting voyage through the realms of
-  imagination, where every word is a brushstroke on the canvas of existence. Let
-  your creativity soar, and together, let's paint the world with the vibrant
-  hues of poetry.
-  <span class="about__span"
-    >Start your poetic odyssey with InkSpire today.</span
+<%- include("partials/header.ejs") %>
+<main
+  class="main"
+  style="
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    width: 100%;
+    margin: 43px auto;
+    padding: 25px 20px;
+  "
+>
+  <h1
+    class="about__heading"
+    style="
+      align-self: center;
+      max-width: 800px;
+      width: 100%;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+      font-weight: 400;
+      font-size: clamp(42px, 5vw, 86px);
+      margin: 0;
+      padding: 0;
+    "
   >
-</p>
+    Welcome to InkSpire!
+  </h1>
+  <p
+    class="about__text"
+    style="
+      max-width: 800px;
+      width: 100%;
+      font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      font-size: clamp(16px, 5vw, 24px);
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+    "
+  >
+    We celebrate the artistry and soulful expression of poetry in all its forms.
+    Whether you're a seasoned poet or just beginning to explore the depths of
+    verse, our platform is your canvas to unleash your creativity and share your
+    poetic journey with the world. Immerse yourself in a community of
+    like-minded individuals who appreciate the power of words to evoke emotion,
+    provoke thought, and inspire change. From sonnets to haikus, free verse to
+    spoken word, every poetic style finds a home here. Discover a sanctuary
+    where you can pen your thoughts, explore your passions, and weave intricate
+    tapestries of language. Whether you're drawn to the rhythm of rhymes or the
+    raw honesty of prose, our blog space is yours to shape and mold into a
+    reflection of your unique voice. Join us on this enchanting voyage through
+    the realms of imagination, where every word is a brushstroke on the canvas
+    of existence. Let your creativity soar, and together, let's paint the world
+    with the vibrant hues of poetry.
+    <span
+      class="about__span"
+      style="
+        max-width: 800px;
+        width: 100%;
+        font-family: 'Noto Serif Japanese', Georgia, serif;
+        font-size: clamp(16px, 5vw, 24px);
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        color: #011222;
+      "
+    >
+      Start your poetic odyssey with InkSpire today.</span
+    >
+  </p>
+</main>
+
+<%- include("partials/footer.ejs") %>

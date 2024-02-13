@@ -11,6 +11,14 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+app.get("/about", (req, res) => {
+  res.render("about.ejs");
+});
+
+app.get("/newPost", (req, res) => {
+  res.render("newPost.ejs");
+});
+
 // Post request for new posts
 app.post("/submit", (req, res) => {
   // Create a new Date object
