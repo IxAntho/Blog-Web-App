@@ -1,14 +1,24 @@
 <%- include("partials/header.ejs") %>
 
 <div class="form__container">
-  <form action="/submit">
+  <form action="/submit" method="POST">
     <h2 class="form__title">New Post</h2>
     <div class="input-field">
-      <input type="text" id="title" required />
+      <input type="text" id="author" name="postAuthor" />
+      <label class="form__label">Who's writting?</label>
+    </div>
+    <div class="input-field">
+      <input type="text" id="title" name="postTitle" />
       <label class="form__label">Enter a title</label>
     </div>
     <div class="input-field">
-      <textarea id="thoughts" cols="30" rows="10" required></textarea>
+      <textarea
+        id="thoughts"
+        type="text"
+        cols="30"
+        rows="10"
+        name="postText"
+      ></textarea>
       <label class="form__label">Enter your thoughts</label>
     </div>
 
