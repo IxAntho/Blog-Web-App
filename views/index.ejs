@@ -1,90 +1,53 @@
 <%- include("partials/header.ejs") %>
 
-<header class="py-5 bg-light border-bottom mb-4">
-  <div class="container">
-    <div class="text-center my-5">
-      <h1
-        class="fw-bolder"
-        style="
-          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+  <header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+      <div class="text-center my-5">
+        <h1
+          class="fw-bolder"
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
             sans-serif;
-          font-weight: 400 !important;
-          font-size: clamp(36px, 5vw, 96px);
-        "
-      >
-        Welcome to Blog Home!
-      </h1>
-      <p class="lead mb-0">
-        Explore Engaging Content and Insights in Our Blog Home
-      </p>
-    </div>
-  </div>
-</header>
-
-<div class="container px-4 px-lg-5">
-  <div class="row gx-4 gx-lg-5 justify-content-center">
-    <div class="col-md-10 col-lg-8 col-xl-7" style="margin-bottom: 36%">
-      <% posts.forEach(post => { %>
-        <div class="post" onclick="displayPostModal('<%= post.title %>', '<%= post.author %>', '<%= post.date %>', '<%= post.text %>')">
-          <h2 class="post-title post__title"><%= post.title %></h2>
-          <p class="post__author">- <%= post.author %></p>
-          <div class="small text-muted post__date"><%= post.date %></div>
-        </div>
-        <hr class="my-4">
-      <% }); %>
-    </div>
-  </div>
-</div>
-
-<!-- Button to trigger the modal
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Open Modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+            font-weight: 400 !important;
+            font-size: clamp(36px, 5vw, 96px);
+          "
+        >
+          Welcome to Blog Home!
+        </h1>
+        <p class="lead mb-0">
+          Explore Engaging Content and Insights in Our Blog Home
+        </p>
       </div>
-      <div class="modal-body">
-        <p><strong>Author:</strong> John Doe</p>
-        <p><strong>Date:</strong> February 14, 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur accumsan quam, sit amet ultricies urna consectetur a. Mauris a urna sit amet nisl euismod congue vel ut enim. Ut ac lorem odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus ac nisi non justo semper blandit. Fusce id turpis dolor. Curabitur gravida dapibus tortor, non feugiat libero auctor eget. Sed vel orci non velit hendrerit accumsan. Proin nec ligula eu nunc semper vestibulum. Ut ut purus et urna facilisis eleifend. Proin ullamcorper posuere justo, sed viverra mi molestie eget.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- You can add additional buttons here if needed -->
+    </div>
+  </header>
+
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7" style="margin-bottom: 36%">
+        <% posts.forEach(post => { %>
+          <div class="post">
+            <a class="post__title-link" href="/post/<%= post.id %>">
+              <h2 class="post-title post__title"><%= post.title %></h2>
+            </a>
+            <p class="post__author">- <%= post.author %></p>
+            <div class="small text-muted post__date"><%= post.date %></div>
+          </div>
+          <hr class="my-4">
+        <% }); %>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Bootstrap JS and dependencies -->
+  <%- include("partials/footer.ejs") %>
+  <!-- Ensure jQuery is loaded before Bootstrap and use the slim version -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Ensure Popper.js is loaded before Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<!-- Bootstrap bundle includes Popper.js, so no need to load it separately -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Your custom script -->
+<script src="js/scripts.js"></script>
 
 
-<%- include("partials/footer.ejs") %>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    function displayPostModal(title, author, date, text) {
-      // Set modal content with the retrieved post data
-      console.log("click")
-      document.querySelector('.modal-title').textContent = title;
-      document.querySelector('.modal-body').innerHTML = `
-        <p><strong>Author:</strong> ${author}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p>${text}</p>
-      `;
-      // Show the modal
-      $('#postModal').modal('show');
-    }
-  </script>
-  <script src="js/scripts.js"></script>
-</body>
+  </body>
+</html>

@@ -1,5 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
+// Import a library for generating unique IDs
+import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 const port = 3000;
@@ -47,8 +49,12 @@ app.post("/submit", (req, res) => {
     const text = req.body.postText;
     const author = req.body.postAuthor;
 
+    // Generate a unique ID for the post
+    const postId = uuidv4();
+
     // Construct post object
     const newPost = {
+      id: postId, // Assign the generated ID to the post object
       title: title,
       author: author,
       date: formattedDate,
@@ -66,59 +72,16 @@ app.post("/submit", (req, res) => {
   }
 });
 
-// app.post("/submit", (req, res) => {
-//   try {
-//     // Create a new Date object
-//     const currentDate = new Date();
-//     const monthNames = [
-//       "January",
-//       "February",
-//       "March",
-//       "April",
-//       "May",
-//       "June",
-//       "July",
-//       "August",
-//       "September",
-//       "October",
-//       "November",
-//       "December",
-//     ];
-//     const month = monthNames[currentDate.getMonth()];
-//     const day = currentDate.getDate();
-//     const year = currentDate.getFullYear();
-//     const formattedDate = month + " " + day + ", " + year;
-
-//     // Get post data from request body
-//     const title = req.body.postTitle;
-//     const text = req.body.postText;
-//     const author = req.body.postAuthor;
-
-//     // Construct post HTML
-//     const postHtml = `
-//       <div class="post-preview">
-//         <div class="post__link">
-//           <h2 class="post-title post__title">${title}</h2>
-//           <p class="post__author">- ${author}</p>
-//           <div class="small text-muted post__date">${formattedDate}</div>
-//         </div>
-//       </div>
-//       <hr class="my-4">
-//     `;
-
-//     // Add the new post to the beginning of the posts array
-//     posts.unshift(postHtml);
-
-//     console.log("Post submitted successfully");
-//     res.redirect("/"); // Redirect back to the home page
-//   } catch (err) {
-//     console.error("Error submitting post:", err);
-//     res.status(500).send("Error submitting post");
-//   }
-// });
-
 app.get("/", (req, res) => {
   res.render("index.ejs", { posts });
+});
+
+app.get("/post/:id", (req, res) => {
+  const postId = req.params.id;
+  // Find the post with the corresponding ID in your posts array or database
+  const post = posts.find((post) => post.id === postId);
+  // Render the post.ejs file and pass the post data
+  res.render("post.ejs", { post });
 });
 
 app.listen(port, () => {

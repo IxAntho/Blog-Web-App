@@ -12,6 +12,51 @@
     />
     <link rel="stylesheet" href="../../public/index.css" />
     <style>
+      .main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        align-items: center;
+        justify-content: center;
+        max-width: 1440px;
+        width: 100%;
+        margin: 78px auto;
+        padding: 25px 20px;
+      }
+
+      .about__heading {
+        align-self: center;
+        max-width: 800px;
+        width: 100%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        font-weight: 400;
+        font-size: clamp(42px, 5vw, 86px);
+        margin: 0;
+        padding: 0;
+      }
+
+      .about__text {
+        max-width: 800px;
+        width: 100%;
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        font-size: clamp(16px, 5vw, 24px);
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+      }
+
+      .about__span {
+        max-width: 800px;
+        width: 100%;
+        font-family: 'Noto Serif Japanese', Georgia, serif;
+        font-size: clamp(16px, 5vw, 28px);
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        color: #011222;
+      }
+
       .form__container {
         max-width: 700px;
         width: 100%;
@@ -128,6 +173,60 @@
         font-family: "Noto Serif Japanese";
         font-weight: 300;
         font-size: 20px;
+      }
+
+      .post__title-link {
+        text-decoration: none;
+      }
+
+      .article {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 800px;
+        width: 100%;
+        margin: 200px auto;
+      }
+
+      .article__title {
+        font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
+        font-weight: 200;
+        font-size: clamp(34px, 5vw, 64px);
+        color: #171717;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+
+      .article__author {
+        font-family: "Noto Serif Japanese";
+        font-weight: 300;
+        font-size: clamp(16px, 5vw, 24px);
+        color: #171717;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+
+      .article__date {
+        font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16;
+        color: #171717;
+        margin: 0;
+        margin-bottom: 25px;
+      }
+
+      .article__text {
+        align-self: center;
+        font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: clamp(16px, 5vw, 24px);
+        color: #171717;
+        margin: 0;
+      }
+
+      .footer {
+        margin-top: auto;
       }
     </style>
   </head>
