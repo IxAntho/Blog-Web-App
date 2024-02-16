@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+<div class="form__container">
+  <form action="/post/<%= post.id %>?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT"> <!-- This line sets the HTTP method to PUT -->
+    <h2 class="form__title">Edit Your Post</h2>
+    <div class="input-field">
+      <input type="text" id="author" name="postAuthor" value="<%= post.author %>"/>
+      <label class="form__label">Who's writing?</label>
+    </div>
+    <div class="input-field">
+      <input type="text" id="title" name="postTitle" value="<%= post.title %>"/>
+      <label class="form__label">Enter a title</label>
+    </div>
+    <div class="input-field">
+      <textarea
+        id="thoughts"
+        type="text"
+        cols="30"
+        rows="10"
+        name="postText"
+      ><%= post.text %></textarea>
+      <label class="form__label">Enter your thoughts</label>
+    </div>
+
+    <button type="submit" class="update__bttn">Update Post</button>
+  </form>
+</div>
+
+<%- include("partials/footer.ejs") %>
+</body>
+</html>

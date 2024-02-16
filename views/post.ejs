@@ -1,5 +1,14 @@
 <%- include("partials/header.ejs") %>
 <div class="article">
+  <div class="article__buttons">
+    <button type="button" class="btn btn-dark article__edit-bttn">
+      <a href="/postEdit?id=<%= post.id %>" style="text-decoration: none; color: inherit;">Edit</a>
+    </button>
+    <form action="/post/<%= post.id %>?_method=DELETE" method="POST" class="delete-form">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn btn-dark article__delete-bttn">Delete</button>
+    </form>
+  </div>
   <h2 class="article__title"><%= post.title %></h2>
   <p class="article__author">Author: <%= post.author %></p>
   <p class="article__date">Date: <%= post.date %></p>

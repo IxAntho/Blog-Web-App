@@ -14,8 +14,8 @@ Start your poetic odyssey with InkSpire today.
 
 ## Features
 
-- User authentication and registration system.
-- Ability to create, edit, and delete blog posts.
+- Ability to create, edit, and delete blog posts. (New)
+  - Users can now edit and delete their existing blog posts, giving them more control over their content.
 - Explore a wide range of poetry styles and topics.
 - Engage with a community of poets and enthusiasts through comments and likes.
 - Responsive design for seamless access on various devices.
